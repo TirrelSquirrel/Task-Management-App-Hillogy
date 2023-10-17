@@ -1,0 +1,48 @@
+<h1>Task Manager App</h1>
+<section>
+  <div class="add-task-container">
+    <div class="add-task-box">
+      <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+        <h2>New task</h2>
+        <div class="form">
+          <label>Title</label>
+        <input
+          ngModel
+          #taskTitleField="ngModel"
+          required
+          name="title"
+          class="input"
+          type="text"
+          placeholder="Add a title"
+        />
+        <label>Description</label>
+        <input
+          ngModel
+          #taskTextField="ngModel"
+          required
+          name="text"
+          class="input"
+          type="text"
+          placeholder="Add a description"
+        />
+
+        <button type="submit" class="button">Add</button>
+        </div>
+        <div *ngIf="form?.touched && form?.invalid">
+          <p class="warning-red">All text fields must be completed!</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="task-list">
+  <app-task
+  *ngFor="let task of tasks"
+  [task]="task"
+  (taskClicked)="toggleCompleted(task)"
+  (editClicked)="editTask(task)"
+  (deleteClicked)="deleteTask(task)"
+
+  />
+</section>

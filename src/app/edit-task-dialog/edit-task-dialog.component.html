@@ -1,0 +1,36 @@
+<h3>Edit Task</h3>
+<div mat-dialog-content>
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+    <div>
+      <label class="input-label">Title</label>
+      <input
+        ngModel
+        #todoTitleField="ngModel"
+        required
+        name="title"
+        type="text"
+        class="input"
+        placeholder="New title"
+        [ngModel]="task.title"
+      />
+      <label class="input-label">Description</label>
+      <input
+        ngModel
+        #todoTextField="ngModel"
+        required
+        name="text"
+        type="text"
+        class="input"
+        placeholder="New text"
+        [ngModel]="task.text"
+      />
+    </div>
+    <div *ngIf="form?.touched && form?.invalid">
+      <p class="warning-red">All text fields must be completed!</p>
+    </div>
+    <div class="edit-buttons">
+      <button (click)="close()">Cancel</button>
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</div>

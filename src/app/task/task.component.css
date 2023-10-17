@@ -1,0 +1,34 @@
+.task-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  max-width: 90vw;
+  gap: 10px;
+  margin: 10px;
+}
+
+.check {
+  align-self: flex-start;
+  align-self: center;
+}
+
+.task-content {
+  flex: 0.8;
+}
+
+.task-title {
+  font-weight: bold;
+}
+
+.task-icons {
+  align-self: flex-end;
+}
+.clickable {
+  cursor: pointer;
+  animation-duration: 0.8s;
+}
+
+.clickable:hover {
+  scale: 1.2;
+}

@@ -1,0 +1,27 @@
+<div
+  class="task-item"
+  (click)="onTaskClicked()"
+  [class.completed]="task.completed"
+>
+  <div class="check">
+    <i class="material-symbols-outlined clickable">check_circle</i>
+  </div>
+  <div class="task-content">
+    <div class="task-title">
+    {{ task.title }}
+  </div>
+  <div class="task-text">
+    {{ task.text }}
+  </div>
+  </div>
+  <div class="task-icons">
+    <div
+      class="material-symbols-outlined clickable"
+      (click)="onEditClicked()"
+    >
+      edit
+    </div>
+    <div class="material-symbols-outlined clickable"
+    (click)="onDeleteClicked()"> delete </div>
+  </div>
+</div>
