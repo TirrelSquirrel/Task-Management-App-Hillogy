@@ -1,0 +1,12 @@
+.edit-dialog {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(175, 198, 218);
+  border-radius: 20px;
+  border: none;
+}
+
+.edit-title {
+  margin-top: 10px;
+  text-align: center;
+}
