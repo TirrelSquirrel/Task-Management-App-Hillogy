@@ -1,12 +1,28 @@
-.edit-dialog {
+.edit-buttons {
   display: flex;
   flex-direction: column;
-  background-color: rgb(175, 198, 218);
-  border-radius: 20px;
-  border: none;
 }
 
-.edit-title {
-  margin-top: 10px;
-  text-align: center;
+.green {
+  color: green
+}
+
+.green:hover {
+  color: rgb(10, 94, 10)
+}
+
+.green:active {
+  color: rgb(39, 160, 39)
+}
+
+.red {
+  color: red;
+}
+
+.red:hover {
+  color: rgb(146, 5, 5);
+}
+
+.red:active {
+    color: rgb(241, 82, 82);
 }

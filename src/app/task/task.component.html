@@ -4,7 +4,10 @@
   [class.completed]="task.completed"
 >
   <div class="check">
-    <i class="material-symbols-outlined clickable">check_circle</i>
+    <i *ngIf="task.completed" class="material-symbols-outlined clickable">check_circle</i>
+    <i *ngIf="!task.completed"><span class="material-symbols-outlined clickable">
+radio_button_unchecked
+</span></i>
   </div>
   <div class="task-content">
     <div class="task-title">
