@@ -3,6 +3,14 @@
   flex-direction: column;
 }
 
+.add-task-title {
+  text-align: center;
+}
+
+.add-task-label {
+  color: black;
+}
+
 .green {
   color: green
 }
