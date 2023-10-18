@@ -1,48 +1,53 @@
-<h1>Task Manager App</h1>
-<section>
-  <div class="add-task-container">
-    <div class="add-task-box">
+<div class="app-container">
+  <h1>Task Manager App</h1>
+  <section>
+    <div class="add-task-container">
       <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
-        <h2>New task</h2>
-        <div class="form">
-          <label>Title</label>
-        <input
-          ngModel
-          #taskTitleField="ngModel"
-          required
-          name="title"
-          class="input"
-          type="text"
-          placeholder="Add a title"
-        />
-        <label>Description</label>
-        <input
-          ngModel
-          #taskTextField="ngModel"
-          required
-          name="text"
-          class="input"
-          type="text"
-          placeholder="Add a description"
-        />
+        <h3 class="add-task-title">New task</h3>
+        <div class="add-task-form">
+          <div class="form-input">
+            <label class="add-task-label">Title</label>
+            <input
+              ngModel
+              #taskTitleField="ngModel"
+              required
+              name="title"
+              class="add-task-input"
+              type="text"
+              placeholder="Add a title"
+            />
+          </div>
+          <div class="form-input">
+            <label class="add-task-label">Description</label>
+            <input
+              ngModel
+              #taskTextField="ngModel"
+              required
+              name="text"
+              class="add-task-input"
+              type="text"
+              placeholder="Add a description"
+            />
+          </div>
 
-        <button type="submit" class="button">Add</button>
+          <button type="submit" class="add-task-button"><span class="material-symbols-outlined">
+check
+</span></button>
         </div>
         <div *ngIf="form?.touched && form?.invalid">
           <p class="warning-red">All text fields must be completed!</p>
         </div>
       </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="task-list">
-  <app-task
-  *ngFor="let task of tasks"
-  [task]="task"
-  (taskClicked)="toggleCompleted(task)"
-  (editClicked)="editTask(task)"
-  (deleteClicked)="deleteTask(task)"
-
-  />
-</section>
+  <section class="task-list">
+    <app-task
+      *ngFor="let task of tasks"
+      [task]="task"
+      (taskClicked)="toggleCompleted(task)"
+      (editClicked)="editTask(task)"
+      (deleteClicked)="deleteTask(task)"
+    />
+  </section>
+</div>
